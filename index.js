@@ -4,9 +4,17 @@ const project = [{
     id: "1",
     title: "Criar um back-end de um done list",
     task: ["Tarefa exemplo"]
-}]
+}];
+let number = 0;
+
 app.use(express.json());
 
+// MIDDLEWARE GLOBAL -> CHECK REQUEST ACCOMPHISHED
+app.use((request,response,next) =>{
+    number++;
+    console.log(`Request accomphished: ${number}`);
+    return next();
+});
 // MIDDLEWARE -> CHECK IF PROJECT EXIST
 function checkProject(request,response,next){
     const {id} = request.params;
