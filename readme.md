@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Carta assinatura" src="img/cartao-ass.png" width="400px" />
+    <img alt="Carta assinatura" src="img/cartao-ass.png" width="500px" />
 </h1>
 
 # API FEITA EM NODE JS
@@ -27,6 +27,7 @@ POST /project
 	"title": "NOME_DO_PROJETO"
 }
 ```
+`EXEMPLO: http://localhost:3000/project/`
 
 ### ADICIONAR TAREFA
 ```
@@ -42,6 +43,7 @@ POST /project/[ID]/tasks
 ```
 GET /project
 ```
+`EXEMPLO: http://localhost:3000/project/`
 
 ### ATUALIZAR NOME DO PROJETO
 ```
