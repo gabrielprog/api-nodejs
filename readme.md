@@ -16,7 +16,12 @@ ela é um projeto base de um done list
 ---
 ## Modo de usar api 
 
-***USANDO PORTA 3000, EXEMPLO:  http://localhost:3000/project***
+### COMANDOS PARA INICIAR
+```
+yarn add nodemon
+yarn dev
+```
+***OBS: USANDO PORTA 3000, EXEMPLO:  http://localhost:3000/project***
 
 ### CRIA PROJETO
 ```
