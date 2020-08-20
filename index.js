@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const project = [{
     id: "1",
-    title: "exemplo",
+    title: "Criar um back-end de um done list",
     task: ["Tarefa exemplo"]
 }]
 app.use(express.json());
@@ -19,10 +19,18 @@ app.post("/project",(request, response) => {
 
     return response.json(project);
 });
-
 // READ -> PROJECT ONLY READ ALL TASK AND PROJECT
 app.get("/project",(request, response) => {
     return response.json(project);
-})
+});
+// UPDATE -> PROJECT ALTER TITLE OF PROJECT
+app.put("/project/:id",(request, response) => {
+    const {id} = request.params;
+    const {title} = request.body;
+    const index = project.findIndex(xId => xId.id === id);
 
+    project[index]["title"] = title;
+    
+    return response.json(project);
+});
 app.listen(3000);
