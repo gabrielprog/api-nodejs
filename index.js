@@ -8,7 +8,7 @@ const project = [{
 app.use(express.json());
 
 // CREATE -> PROJECT ONLY WITH ID AND TITLE
-app.post("/project",(request,response) => {
+app.post("/project",(request, response) => {
     const {id,title} = request.body;
     
     project.push({
@@ -19,5 +19,10 @@ app.post("/project",(request,response) => {
 
     return response.json(project);
 });
+
+// READ -> PROJECT ONLY READ ALL TASK AND PROJECT
+app.get("/project",(request, response) => {
+    return response.json(project);
+})
 
 app.listen(3000);
