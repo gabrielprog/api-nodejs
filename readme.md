@@ -7,7 +7,7 @@ Está api foi desenvolvida como forma de demostrar meus conhecimentos em api
 ela é um projeto base de um done list
 ---
 ***Recursos da api***
-0. Criar um projeto
+1. Criar um projeto
 0. Lista todos os projetos criado
 0. Adiciona tarefas ao projeto
 0. Deleta o projeto
