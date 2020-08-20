@@ -30,7 +30,16 @@ app.put("/project/:id",(request, response) => {
     const index = project.findIndex(xId => xId.id === id);
 
     project[index]["title"] = title;
-    
+
     return response.json(project);
+});
+// DELETE -> PROJECT DELETE PROJECT AND TASK
+app.delete("/project/:id", (request, response) => {
+    const {id} = request.params;
+    const index = project.findIndex(xId => xId.id === id);
+
+    project.splice(index,1);
+
+    response.send();
 });
 app.listen(3000);
