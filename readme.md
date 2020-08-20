@@ -1,12 +1,12 @@
 <h1 align="center">
-    <img alt="Carta assinatura" src="img/cartao-ass.png" width="200px" />
+    <img alt="Carta assinatura" src="img/cartao-ass.png" width="400px" />
 </h1>
 
 # API FEITA EM NODE JS
-Está api foi desenvolvida como forma de demostrar meus conhecimento api
+Está api foi desenvolvida como forma de demostrar meus conhecimentos em api
 ela é um projeto base de um done list
 ---
-*** Recursos da api ***
+***Recursos da api***
 0. Criar um projeto
 0. Lista todos os projetos criado
 0. Adiciona tarefas ao projeto
@@ -16,7 +16,7 @@ ela é um projeto base de um done list
 ---
 ## Modo de usar api 
 
-*** USANDO PORTA 3000, EXEMPLO:  http://localhost:3000/project ***
+***USANDO PORTA 3000, EXEMPLO:  http://localhost:3000/project***
 
 ### CRIA PROJETO
 ```
