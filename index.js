@@ -7,6 +7,17 @@ const project = [{
 }]
 app.use(express.json());
 
+// MIDDLEWARE -> CHECK IF PROJECT EXIST
+function checkProject(request,response,next){
+    const {id} = request.params;
+    const index = project.findIndex(xId => xId.id === id);
+    
+    if(index < 0){
+        response.status(404).json({Error: "Not Found Project"});
+    }
+
+    return next();
+}
 // CREATE -> PROJECT ONLY WITH ID AND TITLE
 app.post("/project",(request, response) => {
     const {id,title} = request.body;
@@ -24,7 +35,7 @@ app.get("/project",(request, response) => {
     return response.json(project);
 });
 // UPDATE -> PROJECT ALTER TITLE OF PROJECT
-app.put("/project/:id",(request, response) => {
+app.put("/project/:id", checkProject,(request, response) => {
     const {id} = request.params;
     const {title} = request.body;
     const index = project.findIndex(xId => xId.id === id);
@@ -34,7 +45,7 @@ app.put("/project/:id",(request, response) => {
     return response.json(project);
 });
 // DELETE -> PROJECT DELETE PROJECT AND TASK
-app.delete("/project/:id", (request, response) => {
+app.delete("/project/:id", checkProject, (request, response) => {
     const {id} = request.params;
     const index = project.findIndex(xId => xId.id === id);
 
@@ -43,7 +54,7 @@ app.delete("/project/:id", (request, response) => {
     response.send();
 });
 // ADD -> ADD TASK IN PROJECT
-app.post("/project/:id/tasks",(request, response) => {
+app.post("/project/:id/tasks", checkProject,(request, response) => {
     const {id} = request.params;
     const {task} = request.body;
     const index = project.findIndex(xId => xId.id === id);
