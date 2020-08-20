@@ -42,4 +42,14 @@ app.delete("/project/:id", (request, response) => {
 
     response.send();
 });
+// ADD -> ADD TASK IN PROJECT
+app.post("/project/:id/tasks",(request, response) => {
+    const {id} = request.params;
+    const {task} = request.body;
+    const index = project.findIndex(xId => xId.id === id);
+
+    project[index]["task"].push(task);
+
+    return response.json(project);
+});
 app.listen(3000);
